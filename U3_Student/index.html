@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<title>CSS Template</title>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<style>
+* {
+  box-sizing: border-box;
+}
+
+body {
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+/* Style the header */
+header {
+  background-color: #CC0000;
+  padding: 10px;
+  text-align: left;
+  font-size: 11px;
+  color: yellow;
+}
+input{
+  border: none;
+  width: 400px;
+  height: 20px;
+  align-content: center;
+}
+label {
+  font-family: AngsanaUPC;
+  align-content: center;
+}
+button{
+  align-content: center;
+  color: green;
+  
+}
+
+/* Create two columns/boxes that floats next to each other */
+nav {
+  float: left;
+  width: 10%;
+  background: #FFDEAD;
+  padding: 20px;
+  height: 600px;
+  
+}
+
+/* Style the list inside the menu */
+nav ul {
+  margin: 0;
+  padding: 0;
+    width: 150px;
+    height: 100%;
+    
+}
+li a {
+    display: block;
+    background-color: #FFCC00;
+    color: #000000;
+    text-decoration: none;
+    padding: 8px;
+    width: 200px;
+    align-content: center;
+    font-size: 12px;
+    
+    
+}
+li b {
+    display: block;
+    background-color: #da4949;
+    color: #000000;
+    text-decoration: none;
+    padding: 8px;
+    width: 200px;
+    font-size: 12px;
+   
+}
+
+li a.active {
+    background-color: #FF0000;
+    color: White;
+    width: 200px;
+
+}li b.active {
+    background-color: #FFCC00;
+    color: White;
+    width: 200px;
+
+}
+
+li a:hover:not(.active) {
+    background-color: #d1d0c6;
+    color: white;
+    width: 200px;
+}
+li b:hover:not(.active) {
+    background-color: #d1d0c6;
+    color: white;
+    width: 200px;
+}
+
+
+
+article {
+  float: left;
+  padding: 20px;
+  width: 90%;
+  background-color: #ecebcc;
+  height: 600px;
+  
+}
+
+/* Clear floats after the columns */
+section::after {
+  content: "";
+  display: table;
+  clear: both;
+
+}
+
+
+footer {
+  background-color: #990000;
+  padding : 1px;
+  text-align: center;
+  font-size: 10px;
+  color: white;
+}
+
+/* Responsive layout - makes the two columns/boxes stack on top of each other instead of next to each other, on small screens */
+@media (max-width: 600px) {
+  nav, article {
+    width: 100%;
+    height: auto;
+    
+  }
+
+}
+
+
+</style>
+</head>
+<body>
+<header>
+  <h2>T H A M M A S A T &nbsp R E G I S T E R</h2>
+</header>
+
+<section>
+  <nav>
+    <ul>
+      <img src="profile.png" alt="Profile Image" width="110" height="110" >
+      <h3><a><b>Username : <br> ID : </a></h3>
+      <li><a href="">ตารางเรียน </a></li>
+      <li><b href="">ยื่นเอกสารคำร้อง </a></li>
+      <li><a href="">แก้ไขข้อมูลคำร้อง</a></li>
+      <li><b href="">ตอบกลับคำร้อง </a></li>
+      <li><a href="">รายการคำร้อง</a></li>
+    
+    </ul>
+  </nav>
+  
+  <article>
+    <h2> ข้อมูลส่วนตัวเพิ่มเติม<p> <hr>
+      <br>
+    <div class="pt-4"></div>
+<div class="container">
+  <form method="post" autocomplete="off" name="hello-sheet">
+    <div class="form-group">
+      <label for="email">Email</label>
+      <input type="text" class="form-control"  placeholder="Email" name="email">
+    </div>
+    <div class="form-group">
+    <label for="LineId">ID Line</label>
+      <input type="text" class="form-control"  placeholder="ID Line" name="LineId ">
+    </div>
+     <div class="form-group">
+    <label for="Tel">Tel</label>
+      <input type="text" class="form-control"  placeholder="Telephonenumber" name="Tel">
+    </div>
+  <div class="form-group">
+    <label for="Other">Other</label>
+    <input type="text" name="Other" class="form-control" placeholder="Other">
+  </div>
+   <br><br> 
+  <dd><dd>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp<button type="submit" name="submit" value="Send message" class="btn btn-primary">บันทึก</button></dd></dd>
+  </article>
+  
+</section>
+<script src="menu.js"></script>
+
+<footer>
+  <p>Contact us Phone : (66)2 986-9156 Email:courseadmin@cs.tu.ac.th </p>
+</footer>
+
+</body>
+</html>
+
