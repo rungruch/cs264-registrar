@@ -1,0 +1,166 @@
+<html>
+<head>
+	<title>THAMMASAT REGISTER</title>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script>
+    $(document).ready(function(){
+    $("#myInput").on("keyup", function() {
+        var value = $(this).val().toLowerCase();
+        $("#myTable tr").filter(function() {
+            $(this).toggle($(this).text().toLowerCase().indexOf(value) > -1)
+            });
+        });
+    });
+    </script>
+
+	<style>
+
+    body{
+        background-color: #f2ffcc;
+        margin: 0;
+
+        height: 100%;
+        margin: 0;
+        padding: 0;
+    }
+
+ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    width: 200px;
+    background-color: #FFDAB9;
+    position: fixed;
+    height: 100%;
+    overflow: auto;
+}
+
+li a {
+    display: block;
+    background-color: #FFCC00;
+    color: #000000;
+    padding: 8px  8px 16px;
+    text-decoration: none;
+}
+
+li a.active {
+    background-color: #FF0000;
+    color: White;
+}
+
+li a:hover:not(.active) {
+    background-color: #FF0000;
+    color: white;
+}
+
+.wrapper {
+   display: block;
+   min-height: 100%; /* real browsers */
+   height: auto !important; /* real browsers */
+   height: 100%; /* IE6 bug */
+   margin-bottom: -20px; /* กำหนด margin-bottom ให้ติดลบเท่ากับความสูงของ footer */
+}
+
+.header {
+        position: fixed;
+        left: 0;
+        top: 0;
+        width: 100%;
+        background-color: red;
+        color: white;
+        text-align: left;
+}
+
+.footer {
+   position: fixed;
+   left: 0;
+   bottom: 0;
+   width: 100%;
+   background-color: darkred;
+   color: white;
+   text-align: center;
+}
+
+
+table {
+  border: 1px solid #000000;
+  font-family: arial, sans-serif;
+  border-collapse: collapse;
+  width: 80%;
+}
+
+th {
+  background-color: #778899;
+  color: white;
+  border: 1px solid #000000;
+  text-align: center;
+  padding: 8px;
+}
+
+td {
+  border: 1px solid #000000;
+  background-color: #FFE4E1;
+  text-align: center;
+  padding: 8px;
+}
+
+tr:nth-child(even) {
+  border: 1px solid #000000;
+  background-color: #66FF99;
+  height: -100%;
+}
+
+
+</style>
+
+</head>
+
+<body>                                                   
+         
+<div class="header" style="background-color:red; font-family:Angsana New; font-size:300%; color:gold; " align="left">&emsp;THAMMASAT  REGISTER</div>
+<label style="font-family:Angsana New; font-size:220%; color:lightslategrey;"> <b><i>&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;สถานะคำร้อง</i></b></label><hr width=100% size=2 color=778899><br clear=right>
+<ul>
+  <img src="profile.jpg" alt="Profile Image" width="221" height="200"  align=left>
+  <h3><a><b>Username : <br> ID : </a></h3>
+  <li><a class="active" href="#about">สถานะคำร้อง</a></li>
+  <li><a href="#back">ย้อนกลับ &emsp;&emsp;&ensp;&nbsp;&nbsp;&nbsp; </a></li>
+  <li><a href="#about">ออกจากระบบ</a></li>
+</ul>	
+  <div style="margin-left:13%;padding:1px 22px;height:650px;">
+
+    <label style="font-family:Angsana New; font-size:220%; color:lightslategrey;"> <b><i>สถานะคำร้อง</i></b></label><hr width=100% size=2 color=778899><br clear=right>
+
+    
+    
+
+	
+
+    
+<br><br>
+
+<table style="font-family:Angsana New; font-size:150%;">
+  <thead>
+  <tr>
+    <th>เพิ่ม/ถอน</th>
+    <th>รหัสวิชา</th>
+    <th>ชื่อวิชา</th>
+    <th>Section</th>
+    <th>สถานะ</th>
+    <th>หมายเหตุ</th>
+
+  </tr>
+  </thead>
+  <tbody id="myTable">
+  
+  
+  </tbody>
+</table>
+
+    </div>
+
+    <div class="footer" style = "font-family:Angsana New; color:white; font-size:110%;background-color:Crimson ">
+        Contact Phone : (66) 2 986-9156 E-mail: courseadmin@cs.tu.ac.th
+    </div>
+</body>
+</html>
