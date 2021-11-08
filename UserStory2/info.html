@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+		
+		<title>THAMMASAT REGISTER</title>
+		<style>
+		#col1{
+			list-style-type: none;
+		    margin: 0;
+		    padding: 0;
+		    width: 13%;
+		    background-color: #FFDAB9;
+		    position: fixed;
+		    height: 100%;
+		    overflow: auto;
+		}
+		#col2{float:right;
+			width: 87%;
+		}
+		ul {
+		    list-style-type: none;
+		    margin: 0;
+		    padding: 0;
+		    width: 13%;
+		    background-color: #FFDAB9;
+		    position: fixed;
+		    height: 100%;
+		    overflow: auto;
+		}
+		li a {
+		    display: block;
+		    color: #000000;
+		    padding: 8px 0 8px 16px;
+		    text-decoration: none;
+		}
+		li a.active {
+		    background-color: #FF0000;
+		    color: White;
+		}
+		li a:hover:not(.active) {
+		    background-color: #000000;
+		    color: white;
+		}
+		input {
+			width: 70%;
+			padding: 12px 20px;
+			box-sizing: border-box;
+			background-color: #f8f8f8;
+			border: 2px solid #ccc;
+			border-radius: 4px;
+			background-color: #f8f8f8;
+			font-size: 16px;
+			resize: none;
+		}
+		textarea {
+			width: 70%;
+  			height: 150px;
+			padding: 12px 20px;
+			box-sizing: border-box;
+			border: 2px solid #ccc;
+			border-radius: 4px;
+			background-color: #f8f8f8;
+			font-size: 16px;
+			resize: none;
+		}
+		input[type=submit] {
+			background-color: green;
+			border: none;
+			color: white;
+			padding: 8px 16px;
+			text-decoration: none;
+			margin: 4px 2px;
+			cursor: pointer;
+			width: 35%;
+		}
+		button {
+			background-color: red;
+			border: none;
+			color: white;
+			padding: 8px 16px;
+			text-decoration: none;
+			margin: 4px 2px;
+			cursor: pointer;
+			width: 35%;
+		}
+		
+		body {
+	        background-color: #f2ffcc;
+	        margin: 0;
+	        height: 100%; /* ให้ html และ body สูงเต็มจอภาพไว้ก่อน */
+	        margin: 0;
+	        padding: 0;
+   		}
+		.wrapper {
+		   display: block;
+		   min-height: 100%; /* real browsers */
+		   height: auto !important; /* real browsers */
+		   height: 100%; /* IE6 bug */
+		   margin-bottom: -20px; /* กำหนด margin-bottom ให้ติดลบเท่ากับความสูงของ footer */
+		}
+		.footer {
+		   height: 20px; /* ความสูงของ footer */
+		   display: block;
+		   text-align: center;
+		}
+
+	</style>
+	</head>
+
+	<body onload="loadDoc()">
+		<h1 style="background-color:red; font-family:Angsana New; font-size:300%; color:gold;" align="left"><dd>THAMMASAT  REGISTER </h1>
+
+	<img src="profile.jpg" alt="Profile Image" width="197" height="197" align=left> 
+
+    <label style="font-family:Angsana New; font-size:220%; color:lightslategrey;"> <b><i>&emsp;&emsp;ติดต่อนักศึกษา</i></b></label><hr width=80% size=2 color=778899><br clear=left>
+
+	<ul id="col1">
+		<li><a href="#Username"><b>Username : <br> ID : </a></li>
+		<li><a class="active" href="#home">เอกสารคำร้อง &emsp;&nbsp;></a></li>
+		<li><a href="#news">ตอบกลับคำร้อง &nbsp;&nbsp;></a></li>
+		<li><a class="active" href="#contact">หน้าแรก &emsp;&emsp;&ensp;&ensp;&nbsp;&nbsp; ></a></li>
+		<li><a href="#back">ย้อนกลับ &emsp;&emsp;&ensp;&nbsp;&nbsp;&nbsp; ></a></li>
+		<li><a class="active" href="#about">ติดต่อนักศึกษา</b></a></li>
+	</ul>
+
+	<div class='menusearch' style="margin-left:15%;padding:1px 16px;height:400px;">
+
+			<h1 id='studentHeader'>Student Info</h1>
+		
+			<label style="font-size:110%;">Student Name: </label>
+			<label id="name" ></label><br>
+			<label style="font-size:110%;">ID: </label>
+			<label id="year"></label><br>
+			<label style="font-size:110%;">Email: </label>
+			<label id="email"></label><br>
+			<label style="font-size:110%;">Grade: </label>
+			<label id="grade"></label><br><br>
+
+	<form align='center'>
+		<textarea type="text" name="Message" id="message" placeholder="กรอกข้อความ"></textarea>
+		<input style = "font-family:Angsana New; font-size:120%;" type="submit" class="button" value="ติดต่อนักศึกษาผ่าน E-mail" onclick="sendMail()">
+		<button style = "font-family:Angsana New; font-size:120%;"class="button" type="button" onclick="window.history.back()">Back</button>
+  	</form>
+
+  	<script>
+   		const sendMail = () => {
+	    const Message = document.getElementById('message').value;
+	    window.open(`mailto:someone@email.com?subject=&body=${message}`);
+    }
+	</script>
+	</div>
+		
+  	<div class="footer" style = "font-family:Angsana New; color:white; font-size:110%;background-color:Crimson ">
+        Contact Phone : (66) 2 986-9156 E-mail: courseadmin@cs.tu.ac.th</div>
+		
+	</body>
+
+	<script src='js/info.js'>
+		
+	</script>
+</html>
