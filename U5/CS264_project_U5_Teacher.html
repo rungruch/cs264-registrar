@@ -1,0 +1,255 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>คำร้องขอเพิ่ม-ถอนล่าช้า</title> 
+        <meta charset="utf-8">
+  		<meta name="viewport" content="width=device-width, initial-scale=1">
+  		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+  		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  		<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+  		<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+        <script type="text/javascript" src="controller.js"></script> 
+		<style>
+        .header {
+            background-color: #FF3333;
+            padding: 40px;
+            text-align: left;
+            }
+        aside{
+            text-align: center;
+            width: 250px ;
+            height: 1100px;
+            background: #FF9966; 
+            float: left;
+            }
+        .block1 {
+            width: 250px;
+            height: 70px;
+            background-color: #FF3333;
+            color: white;
+        } 
+        .block2 {
+            width: 250px;
+            height: 70px;
+            background-color: #FFCC00;
+            color: white;
+        } 
+        body {
+                background-color: #F6FCD9;
+            }
+            p {
+                font-size: 20px;
+                color: #888888;
+            }
+            .stdpic {
+                float: left;
+                margin-left: 50px;
+            }
+            .stdid {
+                border: 3px solid #B0B0B9;
+                padding: 2px;
+                border-radius: 7px;
+                width: 300px;
+                margin-left: 500px;
+            }
+
+            table, td, th{
+                border: 1px solid white;
+                border-collapse: collapse;
+                padding: 5px;
+            }
+            .button {
+                width: 170px;
+                border: none;
+                color: white;
+                padding: 10px 30px;
+                display: inline-block;
+                font-size: 20px;
+                margin: 5px 5px;
+                cursor: pointer;
+                border-radius: 10px;
+                margin-left: 70px;
+            }
+            .button1 {
+                width: 170px;
+                border: none;
+                color: white;
+                padding: 10px 30px;
+                display: inline-block;
+                font-size: 20px;
+                margin: 5px 5px;
+                cursor: pointer;
+                border-radius: 10px;
+                margin-left: 70px;
+            }
+            .button2 {
+                width: 170px;
+                border: none;
+                color: white;
+                padding: 10px 30px;
+                display: inline-block;
+                font-size: 20px;
+                margin: 5px 5px;
+                cursor: pointer;
+                border-radius: 10px;
+            }
+
+            hr {
+                width: 60%;
+
+            }
+            h2 {
+                font-size: 50px;
+                text-indent: 100px;
+                color: #B0B0B9;
+                border-spacing: 100px;
+            }
+
+            </style>
+
+	   </head>
+    <body bgcolor="#F6FCD9"> 
+    <div class="header"> 
+    <h1 style="color:#FFCC66;">THAMMASAT REGISTER</h1>
+    </div>
+    <aside> <!--<h1>aside ฝั่งซ้ายสีแดง <h1>--> 
+        <br><br>
+            <img
+          src="https://upload.wikimedia.org/wikipedia/commons/thumb/3/32/Emblem_of_Thammasat_University.svg/1200px-Emblem_of_Thammasat_University.svg.png"
+          width="150em"
+          height="150em"
+        />
+    <br>
+    <br>
+    <br>
+    <form>
+        <button type="button" class="block1">ตารางเรียน ></button>
+    </form>
+    <form>
+        <button type="button" class="block2">ยื่นเอกสารคำร้อง ></button>
+     </form>
+     <form>
+        <button type="button" class="block1">แก้ไขข้อมูลเอกสารคำร้อง ></button>
+    </form>
+    <form>
+        <button type="button" class="block2">ตอบกลับคำร้อง ></button>
+    </form>
+    <form>
+        <button type="button" class="block1">รายการคำร้อง ></button>
+    </form>
+    <form>
+        <button type="button" class="block2">< ย้อนกลับ</button>
+    </form>
+    </aside><br><br><br>
+    <h2 style="border-spacing: 100px;"><i>เอกสารคำร้อง</i></h2><br>
+    <hr><br><br>
+    <p id="name" style="font-size: 30px;text-indent: 50px;">นายxxxx xxxxx</p>
+
+        <p><img class="stdpic" src="userpic.png" width="170" height="170">&emsp;&emsp;รหัสนักศึกษา : </p>
+        <p>&emsp;&emsp;เกรดเฉลี่ย (GPA) : </p>
+        <p>&emsp;&emsp;สถานะเกรดปัจจุบัน : </p>
+        <p class="stdid">&emsp;63xxxxxxxx ยื่นคำร้องขอ...</p> 
+        <button class="button1" id="preview" style="background-color: #B0B0B9; color: white;">PREVIEW</button>&emsp;<button class="button2" id="download" style="background-color: #DE0B0E; color: white;">DOWNLOAD</button><br><br>    
+        <p style="text-indent: 50px;"><ins>ตารางเรียนนักศึกษา</ins></p>
+
+        <table align="center">
+                <tr align="center" style="color: white; background-color: #98CF9A;" >
+                    <th>Day/Time</th>
+                    <th>8.00-9.00 น.</th>
+                    <th>9.00-10.00 น.</th>
+                    <th>10.00-11.00 น.</th>
+                    <th>11.00-12.00 น.</th>
+                    <th>12.00-13.00 น.</th>
+                    <th>13.00-14.00 น.</th>
+                    <th>14.00-15.00 น.</th>
+                    <th>15.00-16.00 น.</th>
+                    <th>16.00-17.00 น.</th>
+                </tr>
+                <tr style="color: #888888; background-color: #E6E6A7;">
+                    <th>จันทร์</th>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                </tr>
+                <tr style="color: #888888; background-color: #E6E6A7;">
+                    <th>อังคาร</th>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                </tr>
+                <tr style="color: #888888; background-color: #E6E6A7;">
+                    <th>พุธ</th>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                </tr>
+                <tr style="color: #888888; background-color: #E6E6A7;">
+                    <th>พฤหัสบดี</th>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                </tr>
+                <tr style="color: #888888; background-color: #E6E6A7;">
+                    <th>ศุกร์</th>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                </tr>
+                <tr style="color: #888888; background-color: #E6E6A7;">
+                    <th>เสาร์</th>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                </tr>
+                <tr style="color: #888888; background-color: #E6E6A7;">
+                    <th>อาทิตย์</th>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                </tr>
+        </table><br><br>
+        <center><button class="button" id="เห็นด้วย" style="background-color: #CFD8DC; color: #7B8D93">เห็นด้วย</button>&emsp;<button class="button" id="ไม่เห็นด้วย" style="background-color: #7B8D93;">ไม่เห็นด้วย</button></center><br><br><br>
+    </body>
+</html>
