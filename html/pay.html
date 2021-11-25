@@ -1,0 +1,258 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>ภาระค่าใช้จ่าย</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+  <link rel="stylesheet"  href="https://fonts.googleapis.com/css?family=Kanit">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+  <style>
+    /* Remove the navbar's default margin-bottom and rounded borders */ 
+  
+    .navbar {
+      margin-bottom: 0;
+      border-radius: 0;
+      background-color: #c00831;
+      font-size: large;
+    }
+    .jumbotron {
+    background-color: #FFD13F;
+    color: rgb(43, 42, 42);
+    padding: 10px 15px;
+    height: 100%;
+    width: 100%;
+    }
+    .center{
+    background-color: #FFFFFF;
+    width: 90%;
+    height: 100%;
+    padding: 25px;
+    margin: 40px;
+    margin-left: auto;
+    margin-right: auto;
+    box-shadow: 2px 2px 2px #888888;
+
+    
+    }
+    body {
+      background-color: rgb(255, 255, 255);
+      font-family: 'Pridi', serif;
+      background-image: url(https://cdn.discordapp.com/attachments/859534576791978007/911047797237743666/Untitled-1.jpg);
+        background-repeat: no-repeat;
+        background-position: center top;
+        background-attachment: fixed;
+        background-size: contain;
+        background-size: 100% 100%;
+        font-family: 'Kanit', sans-serif;
+    
+    }
+  
+    .wallpaper {
+        background: linear-gradient(rgba(0,0,0.5), rgba(0,0,0,0.5)), src("1.jpg");
+        width: 100%;
+        height: 500px;
+    }
+    .text-wrapper {
+        position: absolute;
+        top: 0;
+        display: grid;
+        align-content: center;
+        justify-content:center;
+        text-align: center;
+        color: white;
+        background-color: rgba(255, 255, 255, 0.7);
+    }
+    .col-sm-4 {
+        font-size: large;
+    }
+    .button1 {
+        background-color: #BE4D00;
+        border: none;
+        color: white;
+        padding: 16px 25px;
+        display: inline-block;
+        font-size: 16px;
+        margin: 5px 5px;
+        cursor: pointer;
+        border-radius: 12px;
+      }
+
+    .button1:hover {
+        box-shadow: 0 12px 16px 0 rgba(0,0,0,0.24),0 17px 50px 0 rgba(0,0,0,0.19);
+    }
+
+    div {
+        text-align: center;
+    }
+
+    img {
+        width: 50%;
+        
+    }
+
+
+    /* Add a gray background color and some padding to the footer */
+    footer {
+      background-color: #bfbfbf;
+      padding: 25px;
+    }
+    footer {
+   background-color: #696969;
+   text-align: center;
+   font-size: 14px;
+   padding: 5px;
+   color: white;
+  }
+    
+    
+  </style>
+
+  <style>
+
+   table {
+    border-collapse: collapse;
+    width: 90%;
+  }
+
+    th, td {
+    text-align: left;
+    padding: 8px;
+  }
+
+    tr:nth-child(even){background-color: #f5ded3}
+
+    th {
+    background-color: #be4d00;
+    color: white;
+  }
+  
+</style>
+</head>
+<body>
+    <nav class="navbar navbar-inverse">
+  <div class="container-fluid">
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>                        
+      </button>
+    </div>
+    <div class="collapse navbar-collapse" id="myNavbar">
+      <ul class="nav navbar-nav">
+        <li><a href="#" onclick="clickstudentmain()" style="color: whitesmoke;">หน้าหลัก</a></li>
+        <li class="dropdown"><a class="dropdown-toggle" data-toggle="dropdown" href="#" style="color: whitesmoke;">ข้อมูลการศึกษา <span class="caret"></span></a>
+          <ul class="dropdown-menu">
+            <li><a href="#" onclick="clickeditgrade()">เกรดเฉลี่ย</a></li>
+            <li><a  href="#" onclick="clickeditclass()">ตารางเรียน</a></li>
+          </ul>
+        </li>
+        <li><a href="#" onclick="clickpay()" style="color: whitesmoke;">ภาระค่าใช้จ่าย</a></li>
+      </ul>
+      <ul class="nav navbar-nav navbar-right">
+        <li><a href="#" onclick="signout()" style="color: rgb(255, 255, 255);"><span class="glyphicon glyphicon-log-out"></span> LOGOUT</a></li>
+      </ul>
+    </div>
+  </div>
+</nav>
+
+<!--head-->
+<div class="jumbotron text-center">
+    
+    <h2 >ภาระค่าใช้จ่าย</h2>
+     <hr width="50%">
+        <p>ตรวจสอบค่าใช้จ่ายที่ต้องชำระ</p>
+  </div>
+<div class="center">
+  <!--contain เนื้อหา-->
+  <br>
+  <div>
+    <label style="font-size: 30px;">ท่านมียอดค้างชำระทั้งหมด xx บาท</label>
+    <br><br>
+  
+<center>
+<table>
+  <tr>
+    <th>รหัสวิชา</th>
+    <th>ชื่อวิชา</th>
+    <th>Section</th>
+    <th>เพิ่ม/ถอน</th>
+    <th>ค่าใช้จ่าย</th>
+    <th>สถานะการจ่าย</th>
+  </tr>
+  <tr>
+    <td>CS264</td>
+    <td>วิศวกรรมซอฟต์แวร์เบื้องต้น</td>
+    <td>100001</td>
+    <td>เพิ่ม</td>
+    <td>45 บาท</td>
+    <td>ยังไม่จ่าย</td>
+  </tr>
+  <tr>
+    <td>CS101</td>
+    <td>โครงสร้างแบบไม่ต่อเนื่อง</td>
+    <td>020001</td>
+    <td>เพิ่ม</td>
+    <td>45 บาท</td>
+    <td>ยังไม่จ่าย</td>
+  </tr>
+  <tr>
+    <td>CS299</td>
+    <td>คอมพิวเตอร์กราฟิก 1</td>
+    <td>010001</td>
+    <td>ถอน</td>
+    <td>45 บาท</td>
+    <td>ยังไม่จ่าย</td>
+</tr>
+<tr>
+    <td>CS102</td>
+    <td>พื้นฐานการแก้ปัญหาและการโปรแกรมคอมพิวเตอร์</td>
+    <td>030002</td>
+    <td>ถอน</td>
+    <td>45 บาท</td>
+    <td>ยังไม่จ่าย</td>
+</tr>
+<tr>
+    <td>CS221</td>
+    <td>โครงสร้างและระบบคอมพิวเตอร์เบื้องต้น</td>
+    <td>040001</td>
+    <td>เพิ่ม</td>
+    <td>45 บาท</td>
+    <td>ยังไม่จ่าย</td>
+  </tr>
+<tr>
+    <td>EL295</td>
+    <td>ภาษาอังกฤษเชิงวิชาการ 1</td>
+    <td>780001</td>
+    <td>ถอน</td>
+    <td>45 บาท</td>
+    <td>ยังไม่จ่าย</td>
+</tr>
+</table>
+</center>
+<br><br>
+<label style="font-size:25px;" >ช่องทางการชำระเงิน</label><br><br><br><br>
+<img src="/img/บันชี.png">  <br><br>
+<p style="color:#474747 ;text-align: center ; font-size: 15px;">แนบหลักฐานการชำระเงิน สามารถอัพไฟล์นามสกุล .pdf,.png,.jpg ได้เท่านั้น </p>
+<center><input type="file" name="fileupload"></center>
+<br><br><br><br>
+<button class="button1">ยืนยัน</button>
+  
+  <br><br>
+  <br><br>
+</div>
+</div>
+  <!-- end of contain เนื้อหา-->
+  
+<!--Footer-->
+<footer >     
+ <P style="color: rgb(247, 247, 247);">Contact us Phone : (66) 2 986-915 E-mail : courseadmin@cs.tu.ac.th</P>
+</footer>
+<script src="/studentjs">
+</script>
+
+
+</body>
+</html>
