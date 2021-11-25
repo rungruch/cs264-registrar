@@ -1,0 +1,52 @@
+[  
+   
+	  {
+		"subjectCode": "TU100",
+		"subjectName": "พลเมืองกับการลงมือแก้ปัญหา"
+	  }, 
+	  {
+		"subjectCode": "TU105",
+		"subjectName": "ทักษะการสื่อสารด้วยภาษาอังกฤษ"
+	  }, 
+	  {
+		"subjectCode": "TU101",
+		"subjectName": "โลก อาเซียน และไทย"
+	  }, 
+	  {
+        "subjectCode": "TU104",
+		"subjectName": "การคิด อ่าน และเขียนอย่างมีวิจารณญาณ"
+	  }, 
+	  {
+		"subjectCode": "CS264",
+		"subjectName": "วิศวกรรมซอฟต์แวร์เบื้องต้น"
+	  }, 
+	  {
+		"subjectCode": "CS101",
+		"subjectName": "โครงสร้างแบบไม่ต่อเนื่อง"
+	  }, 
+	  {
+		"subjectCode": "CS102",
+		"subjectName": "พื้นฐานการโปรแกรมคอมพิวเตอร์"
+	  }, 
+	  {
+		"subjectCode": "CS111",
+		"subjectName": "การโปรแกรมเชิงวัตถุ"
+	  }, 
+	  {
+		"subjectCode": "CS299",
+		"subjectName": "คอมพิวเตอร์กราฟิกส์ 1"
+	  }, 
+	  {
+		"subjectCode": "CS213",
+		"subjectName": "โครงสร้างข้อมูล"
+	  }, 
+	  {
+		"subjectCode": "CS221",
+		"subjectName": "โครงสร้างและระบบคอมพิวเตอร์เบื้องต้น"
+	  }, 
+	  {
+		"subjectCode": "CS300",
+		"subjectName": "สัมมนาการโปรแกรมภาคปฏิบัติ"
+	  }
+    
+  ]
