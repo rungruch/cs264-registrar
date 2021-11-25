@@ -1,0 +1,249 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title></title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+  <link rel="stylesheet"  href="https://fonts.googleapis.com/css?family=Kanit">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+  <style>
+    /* Remove the navbar's default margin-bottom and rounded borders */ 
+  
+    .navbar {
+      margin-bottom: 0;
+      border-radius: 0;
+      background-color: #c00831;
+      font-size: large;
+    }
+    .jumbotron {
+    background-color: #FFD13F;
+    color: rgb(43, 42, 42);
+    padding: 10px 15px;
+    height: 100%;
+    width: 100%;
+    }
+    .center{
+    background-color: #FFFFFF;
+    width: 90%;
+    height: 100%;
+    padding: 25px;
+    margin: 40px;
+    margin-left: auto;
+    margin-right: auto;
+    box-shadow: 2px 2px 2px #888888;    
+    }
+    #goback {
+    background-color: #FFD13F;
+    border: none;
+    color: black;
+    border-radius: 12px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin: 15px ;
+    cursor: pointer;
+    padding: 10px 24px;
+    }
+    #goback:hover {
+        box-shadow: 0 12px 16px 0 rgba(0,0,0,0.24),0 17px 50px 0 rgba(0,0,0,0.19);
+    }
+    #submit {
+    background-color: #C3002F;
+    border: none;
+    color: white;
+    border-radius: 12px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin: 15px ;
+    cursor: pointer;
+    padding: 10px 24px;
+    }
+    #submit:hover {
+        box-shadow: 0 12px 16px 0 rgba(0,0,0,0.24),0 17px 50px 0 rgba(0,0,0,0.19);
+    }
+    body {
+      background-color: rgb(255, 255, 255);
+      font-family: 'Pridi', serif;
+      background-image: url(https://cdn.discordapp.com/attachments/859534576791978007/911047797237743666/Untitled-1.jpg);
+        background-repeat: no-repeat;
+        background-position: center top;
+        background-attachment: fixed;
+        background-size: contain;
+        background-size: 100% 100%;
+        font-family: 'Kanit', sans-serif;
+    
+    }
+  
+    .wallpaper {
+        background: linear-gradient(rgba(0,0,0.5), rgba(0,0,0,0.5)), src("1.jpg");
+        width: 100%;
+        height: 500px;
+    }
+    .text-wrapper {
+        position: absolute;
+        top: 0;
+        display: grid;
+        align-content: center;
+        justify-content:center;
+        text-align: center;
+        color: white;
+        background-color: rgba(255, 255, 255, 0.7);
+    }
+    .col-sm-4 {
+        font-size: large;
+    }
+    /* The container */
+    .container {
+      display: block;
+      position: relative;
+      padding-left: 35px;
+      margin-bottom: 12px;
+      cursor: pointer;
+      font-size: 22px;
+      -webkit-user-select: none;
+      -moz-user-select: none;
+      -ms-user-select: none;
+      user-select: none;
+    }
+
+    /* Hide the browser's default radio button */
+    .container input {
+      position: absolute;
+      opacity: 0;
+      cursor: pointer;
+    }
+
+    /* Create a custom radio button */
+    .checkmark {
+      position: absolute;
+      top: 0;
+      left: 0;
+      height: 25px;
+      width: 25px;
+      background-color: #eee;
+      border-radius: 50%;
+    }
+
+    /* On mouse-over, add a grey background color */
+    .container:hover input ~ .checkmark {
+      background-color: #ccc;
+    }
+
+    /* When the radio button is checked, add a blue background */
+    .container input:checked ~ .checkmark {
+      background-color: #2196F3;
+    }
+
+    /* Create the indicator (the dot/circle - hidden when not checked) */
+    .checkmark:after {
+      content: "";
+      position: absolute;
+      display: none;
+    }
+
+    /* Show the indicator (dot/circle) when checked */
+    .container input:checked ~ .checkmark:after {
+      display: block;
+    }
+
+    /* Style the indicator (dot/circle) */
+    .container .checkmark:after {
+      top: 9px;
+      left: 9px;
+      width: 8px;
+      height: 8px;
+      border-radius: 50%;
+      background: white;
+    }
+    .radio-label {
+      display: inline-block;
+      vertical-align: top;
+      margin-right: 3%;
+    }
+    .radio-input {
+      display: inline-block;
+      vertical-align: top;
+    }
+    /* Add a gray background color and some padding to the footer */
+    footer {
+      background-color: #bfbfbf;
+      padding: 25px;
+    }
+    footer {
+   background-color: #696969;
+   text-align: center;
+   font-size: 14px;
+   padding: 5px;
+   color: white;
+  }
+    
+    
+  </style>
+</head>
+<body>
+
+    <nav class="navbar navbar-inverse">
+        <div class="container-fluid">
+          <div class="navbar-header">
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+              <span class="icon-bar"></span>
+              <span class="icon-bar"></span>
+              <span class="icon-bar"></span>                        
+            </button>
+          </div>
+          <div class="collapse navbar-collapse" id="myNavbar">
+            <ul class="nav navbar-nav">
+              <li><a onclick="clickteachermain()" style="color: rgb(255, 255, 255);">หน้าหลัก</a></li>
+              <li><a href="#"style="color: rgb(255, 255, 255);">ติดต่อ</a></li>
+            </ul>
+            <ul class="nav navbar-nav navbar-right">
+              <li><a href="#" style="color: rgb(255, 255, 255);"><span class="glyphicon glyphicon-log-out"></span> LOGOUT</a></li>
+            </ul>
+          </div>
+        </div>
+      </nav>
+
+<!--head-->
+<div class="jumbotron text-center">
+    
+    <h2 >อนุมัติคำร้องของนักศึกษา</h2>
+     <hr width="50%">
+        <p>กรุณาตัดสินใจว่าการเพิ่ม-ถอนของนักศึกษานั้นสมเหตุสมผลหรือไม่</p>
+  </div>
+<div class="center">
+  <div class="row">
+    <p style="font-size: 18px; padding-left: 40px;">เหตุผลของนักศึกษาในการเพิ่มถอนนั้นมีเหตุผลและอนุมัติคำร้องขอเพิ่มถอน?</p>
+    <br>
+    <label class="container">อนุมัติคำร้องเพิ่ม-ถอนรายวิชา
+      <input type="radio" checked="checked" name="radio">
+      <span class="checkmark"></span>
+    </label>
+    <label class="container">ไม่อนุมัติคำร้องเพิ่ม-ถอนรายวิชา
+      <input type="radio" name="radio">
+      <span class="checkmark"></span>
+    </label>
+    <br>
+    <p style="text-align: left;font-size: 18px; padding-left: 40px;">กรุณากรอกเหตุผลหรือแสดงความคิดเห็นหากไม่อนุมัติคำร้องเพิ่ม-ถอนของนักศึกษา</p>
+    <p style="text-align: center;"><textarea name="comment" rows="12" cols="130"></textarea><br>
+   <br>
+   <a onclick="clickstdlist()" data-role="button" data-inline="true" id="goback">ย้อนกลับ</a>
+   <a href="#" data-role="button" data-inline="true" data-theme="b" id="submit">บันทึก</a>
+  <br><br>
+  </div>
+</div>
+
+
+    
+<!--Footer-->
+<footer >     
+ <P style="color: rgb(247, 247, 247);">Contact us Phone : (66) 2 986-915 E-mail : courseadmin@cs.tu.ac.th</P>
+</footer>
+
+</body>
+</html>
+<script src="/teacherjs"> </script>
