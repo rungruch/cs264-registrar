@@ -1,0 +1,239 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title></title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+  <link rel="stylesheet"  href="https://fonts.googleapis.com/css?family=Kanit">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+  <style>
+    /* Remove the navbar's default margin-bottom and rounded borders */ 
+  
+    .navbar {
+      margin-bottom: 0;
+      border-radius: 0;
+      background-color: #c00831;
+      font-size: large;
+    }
+    .jumbotron {
+    background-color: #ffd13f;
+    color: rgb(43, 42, 42);
+    padding: 10px 15px;
+    height: 100%;
+    width: 100%;
+    }
+    .center{
+    background-color: #FFFFFF;
+    width: 90%;
+    height: 100%;
+    padding: 25px;
+    margin: 40px;
+    margin-left: auto;
+    margin-right: auto;
+    box-shadow: 2px 2px 2px #888888;
+
+    
+    }
+    body {
+      background-color: rgb(255, 255, 255);
+      font-family: 'Pridi', serif;
+      background-image: url(https://cdn.discordapp.com/attachments/859534576791978007/911047797237743666/Untitled-1.jpg);
+        background-repeat: no-repeat;
+        background-position: center top;
+        background-attachment: fixed;
+        background-size: contain;
+        background-size: 100% 100%;
+        font-family: 'Kanit', sans-serif;
+    
+    }
+  
+    .wallpaper {
+        background: linear-gradient(rgba(0,0,0.5), rgba(0,0,0,0.5)), src("1.jpg");
+        width: 100%;
+        height: 500px;
+    }
+    .text-wrapper {
+        position: absolute;
+        top: 0;
+        display: grid;
+        align-content: center;
+        justify-content:center;
+        text-align: center;
+        color: white;
+        background-color: rgba(255, 255, 255, 0.7);
+    }
+    .col-sm-4 {
+        font-size: large;
+    }
+    
+    /* Add a gray background color and some padding to the footer */
+    footer {
+      background-color: #bfbfbf;
+      padding: 25px;
+      bottom: 0;
+    }
+    footer {
+   background-color: #696969;
+   text-align: center;
+   font-size: 14px;
+   padding: 5px;
+   color: white;
+   bottom: 0;
+  }
+    
+    
+ 
+
+  
+    table {
+    border-collapse: collapse;
+    width: 100%;
+  }
+
+    th, td {
+    text-align: left;
+    padding: 8px;
+  }
+
+    tr:nth-child(even){background-color: #ffe6e6}
+
+    th {
+    background-color: #cc0000;
+    color: white;
+  }
+
+
+
+.button {
+  background-color: #f4511e;
+  border: none;
+  color: white;
+  padding: 8px 15px;
+  display: inline-block;
+  font-size: 16px;
+  margin: 5px 5px;
+  cursor: pointer;
+  border-radius: 12px;
+  transition: all 0.5s;
+  width: 80px;
+}
+
+.button span {
+  cursor: pointer;
+  display: inline-block;
+  position: relative;
+  transition: 0.5s;
+}
+
+.button span:after {
+  content: '\00bb';
+  position: absolute;
+  opacity: 0;
+  top: 0;
+  right: -20px;
+  transition: 0.5s;
+}
+
+.button:hover span {
+  padding-right: 25px;
+}
+
+.button:hover span:after {
+  opacity: 1;
+  right: 0;
+}
+
+.button2 {
+        background-color: #828282;
+        border: none;
+        color: white;
+        padding: 8px 15px;
+        display: inline-block;
+        font-size: 14px;
+        margin: 5px 5px;
+        cursor: pointer;
+        border-radius: 10px;
+      }
+
+.button2:hover {
+        box-shadow: 0 12px 16px 0 rgba(0,0,0,0.24),0 17px 50px 0 rgba(0,0,0,0.19);
+  }
+</style>
+</head>
+<body onload="loadsubjecttableall()">
+
+    <nav class="navbar navbar-inverse">
+        <div class="container-fluid">
+          <div class="navbar-header">
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+              <span class="icon-bar"></span>
+              <span class="icon-bar"></span>
+              <span class="icon-bar"></span>                        
+            </button>
+          </div>
+          <div class="collapse navbar-collapse" id="myNavbar">
+            <ul class="nav navbar-nav">
+              <li><a href="#" onclick="clickstudentmain()" style="color: whitesmoke;">หน้าหลัก</a></li>
+              <li class="dropdown"><a class="dropdown-toggle" data-toggle="dropdown" href="#" style="color: whitesmoke;">ข้อมูลการศึกษา <span class="caret"></span></a>
+                <ul class="dropdown-menu">
+                  <li><a href="#" onclick="clickeditgrade()">เกรดเฉลี่ย</a></li>
+                  <li><a  href="#" onclick="clickeditclass()">ตารางเรียน</a></li>
+                </ul>
+              </li>
+              <li><a href="#" onclick="clickpay()" style="color: whitesmoke;">ภาระค่าใช้จ่าย</a></li>
+            </ul>
+            <ul class="nav navbar-nav navbar-right">
+              <li><a href="#" onclick="signout()" style="color: rgb(255, 255, 255);"><span class="glyphicon glyphicon-log-out"></span> LOGOUT</a></li>
+            </ul>
+          </div>
+        </div>
+      </nav>
+
+<!--head-->
+<div class="jumbotron text-center">
+    
+    <h2 >สถานะคำร้อง</h2>
+     <hr width="50%">
+     <p>สามารถตรวจสอบสถานะคำร้องได้</p>
+        
+  </div>
+<div class="center">
+  <!--contain เนื้อหา-->
+  <table id="showtable">
+  <tr>
+    <th>รหัสวิชา</th>
+    <th>ชื่อวิชา</th>
+    <th>Section</th>
+    <th>เพิ่ม/ถอน</th>
+    <th>สถานะ</th>
+    <th><center>แก้ไขคำร้อง</center></th>
+    <th><center>ยกเลิกคำร้อง</center></th>
+  </tr>
+ 
+</table>
+
+  <br><br>
+  <br><br>
+  <br><br>
+  <br><br>
+  <br><br>
+  <br><br>
+  <br><br>
+  <br><br>
+  <br><br>
+  
+  </div>
+
+  <!-- end of contain เนื้อหา-->
+
+    
+<!--Footer-->
+<footer >     
+ <P style="color: rgb(247, 247, 247);">Contact us Phone : (66) 2 986-915 E-mail : courseadmin@cs.tu.ac.th</P>
+</footer>
+<script src="/studentjs">
+</script>
+</body>
+</html>

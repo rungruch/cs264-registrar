@@ -1,0 +1,67 @@
+1. login.html (search.js , /searchjs)
+-function search ส่งข้อมูลผ่าน url เช่น id 
+
+2.student-main.html หน้าหลัก (/studentjs,sudent_controller.js)
+url data:id
+-formatAMPM ใส่เวลา
+
+3.class_table.html ค้นตาราง (/studentjs,sudent_controller.js)(res/student_subject.json)
+url data:id
+-formatAMPM ใส่เวลาด้านข้าง
+-ปุ่มค้นหา  ใช้ loadDoc หาตารางจาก json  เพิ่มลงตารางเว็บ   (/getreg_subject methodget get data from json)
+-ปุ่มแสดงทั้งหมด  ใช้ loadsubjecttableallหาตารางจาก json  เพิ่มลงตารางเว็บ (/getsubject_table methodget get data from json)
+ตัวแปร tablecnt นับว่ามีตารางขึ้นอยู่กี่วิชา  เวลากดค้นหาไหม่ถ้ามี loadsubjecttableall loadDoc จะลบอกให้หมดก่อน
+
+4.upload.html (upload photofile to siguploads folder) (เรียก server mothod post ตรงๆ)
+url data:id (not necessary)
+(เดา)
+-เข้า server บรรทัด 26 app.post('/sig-upload-single', upload.single('sig-file'), function (req, res, next) 
+-เข้า upload บรรทัด  21  var upload ->เข้า upload บรรทัด  13 เก็บไฟล์ -> น่าจะบรรทัด 24
+-กลับมา 26 แก้ html เรียกไฟล์ตัวอย่างมาดู
+
+5.forminput.html , /fillform กรอกฟอร์ม 1 วิชา  (/formjs,controller.js) (upload to studentformrequested.json)
+url data:id 
+selectyear selectmonth selectdate กรอกวันที่ให้
+formatAMPM ใส่เวลาด้านข้าง
+selectid เอา id url data ลงฟอร์ม
+พิมเสร็จกดเอา curser ออก  c_chackfname c_chacklname checkyear c_chackmajor c_chackadvisor c_chackpost c_chackphone c_chackhomephone ตรวจเงื่อนไข
+c_chackid student id พิมครบสิบตัว สองตัวใส่ชั้นปีให้
+
+-กดส่งฟอร์ม  เข้า conslog() -> ดึงข้อมูลฟอร์มาเก็บเข้าตัวแปร json ->/saveStudentform methodpost เก็บ json แบบเพิ่มไปเรื่อยๆ
+
+
+6.searchform.html,/searchform (/teacherjs,teacher_controller.js)
+
+url data:id (ของอาจารย์หมายถึงชื่อจริง นามสกุลที่จะเอาไปเทียบในแต่ละ json)  (studentformrequested.json)
+ปุ่ม แสดงทั้งหมด (ทำจริงจะใช้ onload) ค้าหาข้อมูลจาก json ว่าชื่ออาจารตรงกับฟอร์มไหนบ้าง ถ้าตัวแปร "teacheradvisorcheck","teachersubjectcheck","authorcheck" = false จะแสดงตาราง
+โดยใช้ funtion loadsubjecttableall
+ ตาราง columm 4 แสดง subject(วิชา) name(ชื่อนศ) role(บทบาท)button(ไปหน้าอนุมัติ)
+ปุ่มข้างชือนศไปหน้า /formapprove 
+
+7.formapprove.html ,/formapprove (approveformjs/approveform.js)
+-formatAMPM ใส่เวลาด้านข้าง
+url data:studentid (ไอดีนศ) subject(วิชาที่เพิมถอน) role(เก็บหน้าที่อาจาร มี subject_teacher/advisor/subject_teacher)
+onload use function fillform ดึงข้อมูลจาก json  (studentformrequested.json) มาลง form html ตั้งไม่ให้แก้
+
+หลังกรอกข้อมูล และกดส่ง to function apploveornot()
+ดึงข้อมูล json มาทั้งหมด /จำตำแหน่งที่อยู่ ที่ตรงกับ url data / เก็บข้อมูลชั่วคราว tmp /เพิ่มข้อมูลที่จารกรอก /ลบข้อมูลเดิมจากข้อมูล json ในตำแหน่งที่รู้ / แทนที่ด้วยข้อมูลใหม่ / up by methodpost to (studentformrequested.json)by function saveformapprove 
+
+8./searchformprint (/teacherjs,teacher_controller.js)
+url data:id (not necessary) (
+ปุ่ม แสดงทั้งหมด (ทำจริงจะใช้ onload) ค้าหาข้อมูลจาก json (studentformrequested.json) ที่อนุมัติหมดแล้ว  by function loadformprint
+ ตาราง columm 4 แสดง subject(วิชา) name(ชื่อนศ) role(บทบาทของจริงไม่ต้องมีกรณีหา  row) button(ไปหน้าอนุมัติ)
+ปุ่มข้างชือนศไปหน้า /printform 
+
+9./printform , formprint.html (/printformjs,printform.js)
+url data:studentid (ไอดีนศ) subject(วิชาที่เพิมถอน)
+onload use function fillform ดึงข้อมูลจาก json (studentformrequested.json) มาลง form html ตั้งไม่ให้แก้
+โหลดภาพจากชื่อไฟล์ที่ค่าตรงกับชื่ออาจารย์ใน form สกุล png อาจจะแก้ให้รับแค่สกุลเดียวเช่น jpg
+ยังไม่ไม่ปุ่มปริ้น
+
+
+10. /edit_class_table,edit_class_table.html (/studentjs,sudent_controller.js)
+var add_total (ค่าดูว่ามีตารางวิชากี่อัน)
+checksubj กรอกวิชาให้
+add_addsubject
+remove_addsubject
+validateForm->conslog->saveFile->(post)/saveStudent->/student_subject.json

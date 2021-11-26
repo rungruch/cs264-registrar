@@ -1,0 +1,28 @@
+[  
+   
+	  {
+		"subjectCode": "TU100",
+		"subjectName": "CIVIC ENGAGEMENT"
+	  }, 
+	  {
+		"subjectCode": "TU105",
+		"subjectName": "COMMUNICATION SKILLS IN ENGLISH"
+	  }, 
+	  {
+        "subjectCode": "TU104",
+		"subjectName": "CRITICAL THINKING, READING, AND WRITING"
+	  }, 
+	  {
+		"subjectCode": "TU101",
+		"subjectName": "THAILAND, ASEAN, AND THE WORLD"
+	  }, 
+	  {
+		"subjectCode": "CS264",
+		"subjectName": "INTRODUCTION TO SOFTWARE ENGINEERING"
+	  }, 
+	  {
+		"subjectCode": "CS300",
+		"subjectName": "SEMINAR IN PRACTICAL PROGRAMMING"
+	  }
+    
+  ]
