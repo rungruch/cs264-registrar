@@ -90,11 +90,12 @@
     </div>
     <div class="collapse navbar-collapse" id="myNavbar">
       <ul class="nav navbar-nav">
-        <li><a href="#" style="color: whitesmoke;" onclick="clickteachermain()">หน้าหลัก</a></li>
-        
+        <li><a href="หน้าหลักอาจารย์.html" style="color: rgb(255, 217, 0);">หน้าหลัก</a></li>
+        <li><a href="#"style="color: rgb(255, 217, 0);">ติดต่อ</a></li>
+        <li><a href="#" style="color: rgb(255, 217, 0);">เพิ่มข้อมูลส่วนตัว</a></li>
       </ul>
       <ul class="nav navbar-nav navbar-right">
-        <li><a href="#" style="color: rgb(255, 255, 255);" onclick="document.location = 'login2.html'"><span class="glyphicon glyphicon-log-out"></span> LOGOUT</a></li>
+        <li><a href="login2.html" style="color: rgb(255, 255, 255);"><span class="glyphicon glyphicon-log-out"></span> LOGOUT</a></li>
       </ul>
     </div>
   </div>
@@ -110,31 +111,31 @@
      <!-- Wrapper for slides -->
      <div class="carousel-inner" role="listbox" style="height: 450px;">
       <div class="item active">
-        <img src="/img/img3.jpg" alt="Image">
+        <img src="img3.jpg" alt="Image">
         <div class="carousel-caption">
         </div>      
       </div>
 
       <div class="item ">
-        <img src="/img/2.jpg" alt="Image">
+        <img src="2.jpg" alt="Image">
         <div class="carousel-caption">
         </div>      
       </div>
 
       <div class="item ">
-        <img src="/img/img1.jpg" alt="Image">
+        <img src="img1.jpg" alt="Image">
         <div class="carousel-caption">
         </div>      
       </div>
       
       <div class="item ">
-        <img src="/img/img2.jpg" alt="Image">
+        <img src="img2.jpg" alt="Image">
         <div class="carousel-caption">
         </div>      
       </div>
 
       <div class="item ">
-        <img src="/img/pic3.jpeg" alt="Image">
+        <img src="pic3.jpeg" alt="Image">
         <div class="carousel-caption">
         </div>      
       </div>
@@ -154,29 +155,71 @@
 <!-- Container (คำร้อง) -->
 
 <div class="container-fluid">
-    
+    <div class="text-center">
+      <h2 style="color:#474747;font-size: 40px;">ยินดีต้อนรับ อาจารย์ xxxxxxxx xxxxxxxx</h2>
+      <p>
+      <br>
+    </div>
     <div class="row" >
       <div class="col-sm-4 col-xs-12" style="width: 100%;">
         <div class="panel panel-default text-center">
           <div class="panel-heading" >
             <h3 style="color:#474747;font-size: 25px;">ค้นหารายชื่อนักศึกษาที่ทำการเพิ่ม-ถอนรายวิชา</h3>
           </div>
-          
-          <div class='menusearch' >
-            <br><br><br>
-                <label for="stuid">รหัสนักศึกษา</label>&nbsp;
-                <input id="stuid" type="text">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                <button type="button" class="btn btn-lg" onclick="searchcontact()">Search</button><br><br>
-                <p id="studentList">
-                </p>
-                <div>
+          <div class="panel-body">
+            <!--รายชื่อเด็กมาย่ื่นคำร้อง-->
+            <br>
+            <br>
+            <br>
+            <input type="search" placeholder="search..." style="width:300px;height: 30px;">
+            <button style="border: none;height: 30px;color: #fff;background-color: #c3002f;font-weight: bold;cursor: pointer;">ค้นหารายชื่อ</button>
+          </div>
+          <br>
+            <div class="form-group col-md-6">
+        <table>
+            <tr>
+            <th>ลำดับชื่อ</th>
+            <th>ชื่อ-นามสกุลนักศึกษา</th> 
+            <th>เลขนักศึกษา</th>
+            <th>Email</th>
+            <th>ตรวจสอบ</th>
+            </tr>
+            <tr>
+              <td style="color: #63666A">1.</td>
+              <td>นางสาววรินธร สุวรรณวัฒน์</td>
+              <td>6309681507</td>
+              <td>warithorn.suw@dome.tu.ac.th</td>
+              <td><button style="border: none;height: 30px;color: #fff;background-color: #c3002f;font-weight: bold;cursor: pointer;">ตรวจสอบคำร้อง</button></td>   
+              </tr>
+              <tr>
+              <td style="color: #63666A">2.</td>
+              <td>นายวฤทธิ ท้วมประเสริฐ</td>
+              <td>6309680095</td>
+              <td>warit.tho@dome.tu.ac.th</td>
+              <td><button style="border: none;height: 30px;color: #fff;background-color: #c3002f;font-weight: bold;cursor: pointer;">ตรวจสอบคำร้อง</button></td>   
+              </tr>   
+               
+                  </table>
                   <br>
-                  <button class="btn btn-lg" onclick="clickteachermain()">ย้อนกลับ</button>
-                </div><br><br>
-        </div>
+                  <br>
+                  </div>
+            <br>
+            <br>
+            <br>
+            <br>
+            <br>
+            <br>
+            <br>
+            <br>
+            <br>
+            <br>
+            <br>
+            <br>
+            <br>
+            <br>
+            <br>
             <!--รายชื่อเด็กมายื่นคำร้อง-->
           </div>
-          
          
         </div>      
       </div> 
@@ -199,7 +242,7 @@
       <div class="col-md-5" id="yui_3_17_2_1_1637091120382_30">
           <div class="infoarea" id="yui_3_17_2_1_1637091120382_29">
           <div class="footer-logo">
-              <a href="https://goo.gl/maps/BCTVs7Lm4ngveP9e8"><img src="/img/address.jpg" width="300" height="150" alt="Academi"></a>
+              <a href="https://goo.gl/maps/BCTVs7Lm4ngveP9e8"><img src="address.jpg" width="300" height="150" alt="Academi"></a>
           </div>
               <h4 style="color: #696a62;">Faculty of Science and Technology</h4>
               <h5 style="color: #696a62;">Thammasat University (Rangsit Campus)</h5>
@@ -234,8 +277,8 @@
         <div class="social-media">
           <h6>Follow us</h6>
           <ul>
-              <li class="smedia-01"><a href="https://www.facebook.com/comscience.tu"><i class="image"><img src="/img/logoF.png" width="15" height="15"></i></a></li>
-              <li class="smedia-03"><a href="https://twitter.com/thammasat_uni"><i class="image"><img src="/img/logoT.png" width="15" height="15"></i></a></li>
+              <li class="smedia-01"><a href="https://www.facebook.com/comscience.tu"><i class="image"><img src="logoF.png" width="15" height="15"></i></a></li>
+              <li class="smedia-03"><a href="https://twitter.com/thammasat_uni"><i class="image"><img src="logoT.png" width="15" height="15"></i></a></li>
           </ul>
         </div>
       </div>
@@ -253,4 +296,3 @@
 
 </body>
 </html>
-<script src="/teacherjs"> </script>
