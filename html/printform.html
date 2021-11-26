@@ -1,0 +1,449 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>พิมพ์คำร้องนักศึกษา</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+  <link rel="stylesheet"  href="https://fonts.googleapis.com/css?family=Kanit">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+  <style>
+    /* Remove the navbar's default margin-bottom and rounded borders */ 
+  
+    .navbar {
+      margin-bottom: 0;
+      border-radius: 0;
+      background-color: #c00831;
+      font-size: large;
+    }
+    .jumbotron {
+    background-color: #FFD13F;
+    color: rgb(43, 42, 42);
+    padding: 10px 15px;
+    height: 100%;
+    width: 100%;
+    }
+    .center{
+    background-color: #FFFFFF;
+    width: 90%;
+    height: 100%;
+    padding: 25px;
+    margin: 40px;
+    margin-left: auto;
+    margin-right: auto;
+    box-shadow: 2px 2px 2px #888888;
+
+    
+    }
+    body {
+      background-color: rgb(255, 255, 255);
+      font-family: 'Pridi', serif;
+      background-image: url(https://cdn.discordapp.com/attachments/859534576791978007/911047797237743666/Untitled-1.jpg);
+        background-repeat: no-repeat;
+        background-position: center top;
+        background-attachment: fixed;
+        background-size: contain;
+        background-size: 100% 100%;
+        font-family: 'Kanit', sans-serif;
+    
+    }
+  
+    .wallpaper {
+        background: linear-gradient(rgba(0,0,0.5), rgba(0,0,0,0.5)), src("1.jpg");
+        width: 100%;
+        height: 500px;
+    }
+    .text-wrapper {
+        position: absolute;
+        top: 0;
+        display: grid;
+        align-content: center;
+        justify-content:center;
+        text-align: center;
+        color: white;
+        background-color: rgba(255, 255, 255, 0.7);
+    }
+    .col-sm-4 {
+        font-size: large;
+    }
+    .button1 {
+        background-color: #ffd13f;
+        border: none;
+        color: black;
+        padding: 10px 24px;
+        display: inline-block;
+        font-size: 16px;
+        margin: 2px 2px;
+        cursor: pointer;
+        border-radius: 12px;
+      }
+
+    .button1:hover {
+        box-shadow: 0 12px 16px 0 rgba(0,0,0,0.24),0 17px 50px 0 rgba(0,0,0,0.19);
+    }
+
+    .button2 {
+        background-color: #ffd13f;
+        border: none;
+        color: black;
+        padding: 10px 24px;
+        display: inline-block;
+        font-size: 16px;
+        margin: 2px 2px;
+        cursor: pointer;
+        border-radius: 12px;
+      }
+
+    .button2:hover {
+        box-shadow: 0 12px 16px 0 rgba(0,0,0,0.24),0 17px 50px 0 rgba(0,0,0,0.19);
+    }
+
+
+    /* Add a gray background color and some padding to the footer */
+    footer {
+      background-color: #bfbfbf;
+      padding: 25px;
+    }
+    footer {
+   background-color: #696969;
+   text-align: center;
+   font-size: 14px;
+   padding: 5px;
+   color: white;
+  }
+    
+
+    table {
+    border-collapse: collapse;
+    width: 100%;
+  }
+    th, td {
+    text-align: left;
+    padding: 18px;
+
+  }
+
+    tr:nth-child(even){background-color: #D3D3D3}
+
+    th {
+    background-color: #828282;
+    color: white;
+  }
+
+  table.table1,table.table1 th,table.table1 td {
+            padding: 10px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+     
+        table.table2{
+          
+          border-collapse: collapse;
+          border-spacing: 0;
+          width: 100%;
+  
+        }
+        table.table2 th,table.table2 td{
+        
+          text-align: center;
+          padding: 8px;
+        }
+        table.table2 tr:nth-child(even) {
+        background-color: #e6e6e6;
+}
+
+
+  @media print {
+ 
+  #jmpt ,#but1,#but2 {
+    display: none;
+  }
+  h2{
+    display: none;
+        }
+ 
+        footer {
+          display: none;
+  }
+  @page {
+    size: 50%;
+    margin: 0mm;
+}
+
+
+}
+</style>
+</head>
+<body onload = "fillformprint()">
+    <nav class="navbar navbar-inverse">
+  <div class="container-fluid">
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>                        
+      </button>
+    </div>
+    <div class="collapse navbar-collapse" id="myNavbar">
+      <ul class="nav navbar-nav">
+        <li><a href="#" onclick="clickteachermain()" style="color: rgb(255, 255, 255);">หน้าหลัก</a></li>
+      </ul>
+      <ul class="nav navbar-nav navbar-right">
+        <li><a href="#" style="color: rgb(255, 255, 255);"><span class="glyphicon glyphicon-log-out"></span> LOGOUT</a></li>
+      </ul>
+    </div>
+  </div>
+</nav>
+
+<!--head-->
+<div id = "jmpt" class="jumbotron text-center">
+    
+    <h2 >ข้อมูลนักศึกษา</h2>
+     <hr width="50%">
+        <p id = "text1">ตรวจสอบคำร้องนักศึกษา</p>
+  </div>
+
+<div class="center">
+  <!--contain เนื้อหา-->
+
+ <div class="container mt-3">
+  <form>
+    <p id="text2" style="font-size: 30px;">ข้อมูลส่วนตัว</p><br>
+    <div class="row">
+      
+      <div class="row">
+        <div class="form-group col-md-6 mt-3 mt-md-0">
+        <label id="al" style="font-size: 16px;">วันที่ยื่นคำร้อง: </label>        
+        <input disabled type="text" id="date" type="date" name="date" style="width: 85px;" placeholder="21/11/64"required>
+        </div>
+       </div>
+       
+
+       <div class="form-group col-md-6 mt-3 mt-md-0">
+        <label id="al" style="font-size: 16px;">ชื่อ:  </label>
+        <input disabled type="text" type="text" class="form-control" id="fname" name="fname" placeholder="ธนกรณ์"required>
+      </div>
+      <div class="form-group col-md-6 mt-3 mt-md-0">
+        <label id="al" style="font-size: 16px;">นามสกุล:   </label>        
+        <input disabled type="text" type="text" class="form-control" id="lname" name="lname" placeholder="ตุละยากรณ์"required>
+      </div>
+    </div>
+
+
+ 
+    <div class="row">
+      <div class="form-group col-md-6 mt-3 mt-md-0">
+        <label id="al" style="font-size: 16px;">เลขทะเบียนนักศึกษา:   </label>        
+        <input disabled type="text" type="text" class="form-control"id="s_id" name="s_id" placeholder="6309681994"required>
+      </div>
+      <div class="form-group col-md-6 mt-3 mt-md-0">
+        <label id="al" style="font-size: 16px;">ชั้นปีที่:  </label>
+        <input disabled type="text" type="text" class="form-control" id="s_year" name="s_year" placeholder="2"required>
+      </div>
+    </div>
+ 
+
+
+  
+    <div class="row">
+      <div class="form-group col-md-6 mt-3 mt-md-0">
+        <label id="al" style="font-size: 16px;">สาขาวิชา:   </label>        
+        <input disabled type="text" type="text" class="form-control" id="major" name="major" placeholder="ภาควิชาวิทยาการคอมพิวเตอร์"required>
+      </div>
+      <div class="form-group col-md-6 mt-3 mt-md-0">
+        <label id="al" style="font-size: 16px;">อาจารย์ที่ปรึกษา:   </label>        
+        <input disabled type="text" type="text" class="form-control"id="advisor" name="advisor" placeholder="อาจารย์ ดร.ปกป้อง ส่องเมือง"required> 
+      </div>
+    </div>
+ 
+
+
+  
+    <div class="row">
+      <div class="form-group col-md-6 mt-3 mt-md-0">
+        <label id="al" style="font-size: 16px;">โทรศัพท์มือถือ:  </label>
+        <input disabled type="text" type="text" class="form-control" id="mobilephone" name="mobilephone" placeholder="XXX-XXX-XXXX"required>
+      </div>
+      <div class="form-group col-md-6 mt-3 mt-md-0">
+        <label id="al" style="font-size: 16px;">โทรศัพท์บ้าน(ถ้ามี):   </label>        
+        <input disabled type="text" type="text" class="form-control"  id="phone" name="phone" placeholder="XXX-XXX-XXXX"required>
+      </div>
+    </div>
+  
+
+
+  <br>
+  <br>
+ 
+    <p style="font-size: 30px;">ที่อยู่อาศัย</p><br>
+    <div class="row">
+      <div class="form-group col-md-6 mt-3 mt-md-0">
+        <label id="al" style="font-size: 16px;">บ้านเลขที่:  </label>
+        <input disabled type="text" type="text" class="form-control"  id="address_num" name="address_num" placeholder="XXX"required>
+      </div>
+      <div class="form-group col-md-6 mt-3 mt-md-0">
+        <label id="al" style="font-size: 16px;">หมู่ที่:   </label>        
+        <input disabled type="text" type="text" class="form-control" id="moo" name="moo" placeholder="XXX"required>
+      </div>
+    </div>
+  
+
+
+
+    <div class="row">
+      <div class="form-group col-md-6 mt-3 mt-md-0">
+        <label id="al" style="font-size: 16px;">ตำบล:   </label>        
+        <input disabled type="text" type="text" class="form-control" id="tumbol" name="tumbol" placeholder="XXX"required>
+      </div>
+      <div class="form-group col-md-6 mt-3 mt-md-0">
+        <label id="al" style="font-size: 16px;">อำเภอ:  </label>
+        <input disabled type="text" type="text" class="form-control"  id="amphur" name="amphur" placeholder="XXX"required>
+      </div>
+    </div>
+ 
+
+
+
+    <div class="row">
+      <div class="form-group col-md-6 mt-3 mt-md-0">
+        <label id="al" style="font-size: 16px;">จังหวัด:   </label>        
+        <input disabled type="text" type="text" class="form-control" id="province" name="province" placeholder="XXX"required>
+      </div>
+      <div class="form-group col-md-6 mt-3 mt-md-0">
+        <label id="al" style="font-size: 16px;">รหัสไปรษณีย์:   </label>        
+        <input disabled type="text" type="text" class="form-control"  id="postcode" name="postcode" placeholder="XXX"required>
+      </div>
+    </div>
+  
+
+  <div  class="row" >
+      <div  class="form-group col-md-6">
+        <table  >
+            <tr>
+             
+              <th style="font-size: 15px;">เพิ่ม/ถอน</th>
+              <th style="font-size: 15px;">รหัสรายวิชา</th> 
+              <th style="font-size: 15px;">ชื่อวิชา</th>
+              <th style="font-size: 15px;">Section</th>
+              <th style="font-size: 15px;">วัน / เวลา</th>
+              <th style="font-size: 15px;">หน่วยกิต</th>
+              <th style="font-size: 15px;">ชื่อผู้สอน</th>
+            </tr>
+            <tr>
+              <td><input disabled type="text" type="text" id="sub_addORrem" class="form-control" name="เพิ่ม/ถอน" style="width: 60px;"placeholder="เพิ่ม"required></td>
+              <td><input disabled type="text" type="text" id="subid" class="form-control" name="รหัสวิชา" style="width: 80px;"placeholder="CS264"required></td>
+              <td><input disabled type="text" type="text" id="subname" class="form-control" name="ชื่อวิชา"  style="width: 200px;" placeholder="วิศวกรรมซอฟต์แวร์เบื้องต้น"required></td>
+              <td><input disabled type="text" type="text" id="subsec" class="form-control" name="section" style="width: 80px;" placeholder="100001"required></td>
+              <td><input disabled type="text" type="text" id="subdate" class="form-control" name="date" style="width: 150px;" placeholder="พุธ 15.00น.-16.30น."required></td>
+
+              <td><input disabled type="text" type="text" id="subw" class="form-control" name="หน่วยกิต" placeholder="3"required></td>
+              <td><input disabled type="text" type="text" id="subprofname" class="form-control" name="ชื่อผู้สอน"  style="width: 190px;" placeholder="ดร. ทรงศักดิ์ รองวิริยะพานิช"required></td>
+              </tr>
+                </table>
+                </div>
+                </div>
+  <br>
+ 
+   <div>
+      <label for="name" style="font-size: 16px;">เหตุผลที่ขอลงทะเบียนรายวิชา</label>
+      <br>
+      <br>
+    </div>
+   
+    <div>
+      <textarea disabled class="form-control" id ="reason" name="reason" rows="8" placeholder="เนื่องจากมีเหตุให้ต้องเข้าโรงพยาบาลในวันที่เพิ่มถอนรายวิชาเลยไม่สามารถลงทะเบียนเรียนได้ทันเวลาที่มหาลัยกำหนด"required></textarea>
+    </div>  
+
+
+<br><br>
+
+<div>
+  <table id="addtable" class="table2" >
+      <tr>
+          
+          <th>ความเห็นอาจารย์ที่ปรึกษา</th>
+          <th>ความเห็นเจ้าหน้าที่</th>
+          
+          
+      </tr>   
+
+      <tr>
+        <td > <textarea id="advisorcomment" name="reason" rows="4" cols="30"  required></textarea> 
+        </select></td>
+        <td ><textarea id="staffcomment" name="reason" rows="4" cols="30"  required></textarea></td>
+         
+    </tr>
+    <tr>
+      <td ><img id="advisorimage" src="/uploads/0001.png"  width="200" 
+        height="50"/> <br></td>
+      <td ><img id="staffimage" src="/uploads/0001.png" width="200" 
+        height="50" /> <br></td>
+       
+  </tr>
+      
+  </table>
+</div>
+<br><br>
+<div>
+  <table id="addtable" class="table2" >
+      <tr>
+          
+          <th>ความเห็นอำจำรย์ูู้สอน</th>
+          <th>ความเห็นคณบดี
+          </th>
+          
+          
+      </tr>   
+
+      <tr>
+        <td > <textarea id="subjectcomment" name="reason" rows="4" cols="30"  required></textarea> 
+        </select></td>
+        <td>
+          
+  <input type="radio" id="html" name="fav_language" value="HTML">
+  <label for="a">อนุมัติ ...................................................................................................................</label><br>
+  <input type="radio" id="aa" name="fav_language" value="a">
+  <label for="b">ไม่อนุมัติ เพราะ ...................................................................................................</label><br>
+  <input type="radio" id="bb" name="fav_language" value="b">
+  <label for="javascript">ดำเนินการตามเสนอ .......................................................................................</label>
+        
+        
+        
+        </td>
+         
+    </tr>
+    <tr>
+      <td ><img id="subjectimage" src="/uploads/0001.png"  width="200" 
+        height="50"/> <br></td>
+      <td >
+        <label> ลงชื่อ...............................................................</label>
+       
+      </td>
+       
+  </tr>
+      
+  </table>
+</div>
+<br> <br>
+    
+  </form>
+  <center>
+    <button  id = "but1" class="button1" href="#" onclick="searchformprint()" >ย้อนกลับ</button>
+    &emsp;&emsp;
+    <button id = "but2" class="button2" href="#"  onclick="window.print()">พิมพ์</button>
+    </center>
+
+</div>
+</div>
+ 
+
+    
+<!--Footer-->
+<footer >     
+ <P style="color: rgb(247, 247, 247);">Contact us Phone : (66) 2 986-915 E-mail : courseadmin@cs.tu.ac.th</P>
+</footer>
+
+</body>
+</html>
+<script src="/approveformjs"> </script>
